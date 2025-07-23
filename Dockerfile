@@ -1,4 +1,4 @@
-FROM debian:12-slim
+FROM debian:stable-slim
 
 RUN sed -i -e's/ main/ main contrib non-free/g' /etc/apt/sources.list.d/debian.sources
 RUN apt-get update && apt-get install -y calibre imagemagick rsync python3-unrardll unrar
