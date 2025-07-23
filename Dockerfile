@@ -1,5 +1,10 @@
 FROM debian:stable-slim
 
+LABEL org.opencontainers.image.source=https://github.com/celsomiranda/calibre-server/
+LABEL org.opencontainers.image.description="Calibre Server"
+LABEL org.opencontainers.image.licenses=MIT
+
+
 RUN sed -i -e's/ main/ main contrib non-free/g' /etc/apt/sources.list.d/debian.sources
 RUN apt-get update && apt-get install -y calibre imagemagick rsync python3-unrardll unrar
 RUN mkdir /srv/calibre
